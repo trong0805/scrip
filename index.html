@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <h1 id="date1"></h1>
+    <button onclick="document.getElementById('date1').innerHTML = Date()">ngày giờ</button>
+    <h1 >tính tổng</h1>
+    <label>số thứ nhất</label> <br />
+    <input type="text" id="a" placeholder="nhập số thứ nhất"> <br />
+    <label>số thứ hai</label> <br />
+    <input type="text" id="b" placeholder="nhập số thứ hai"> <br />
+    <label>kết quả</label> <br />
+    <input type="text" id="kq" placeholder="kết quả"> <br />
+    <button value="nhân" onclick="nhan()">nhân </button>
+    <button value="tổng" onclick="tong()">tổng</button>
+    <script>
+      var a1 = document.getElementById("a");
+      console.log(a1.value);
+      var b1 = document.getElementById("b");
+      console.log(b1.value);
+      let kq1 ;
+      function nhan(){
+        kq1 = a1.value*b1.value
+        document.getElementById("kq").value = kq1;
+      }
+      function tong (){
+        kq1 = +a1.value + +b1.value
+        document.getElementById("kq").value = kq1;
+      }
+    </script>
+  </body>

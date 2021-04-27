@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bán hàng</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="div1">
+            <br/>
+            <label for="">Tên SP</label>
+            <input type="text" name="" id="name-product">
+            <label for="">Tình trạng hàng</label>
+            <select name="" id="status-product">
+                <option value="">Còn hàng</option>
+                <option value="">Hết hàng</option>
+            </select>
+            <label for="">Giá SP</label>
+            <input type="text" name="" id="price-product">
+            <select name="" id="list-product">
+                <option value=""></option>
+                <option value="">Laptop</option>
+                <option value="">Iphone</option>
+            </select>
+        </div>
+        <div class="div2">
+            <button id="save-data" onclick="them()">Lưu</button> 
+            <button id="delete" onclick="xoa()">Xóa Form</button>
+        </div>
+        <div class="div3">
+            <table border="1px" id="giohang">
+                <tr>
+                    <th>ID</th>
+                    <th>Tên SP</th>
+                    <th>Giá SP</th>
+                    <th>Tình trạng</th>
+                    <th>Danh mục SP</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- ======================================= -->
+    <script src="onbanhang.js"></script>
+
+</body>
+</html>

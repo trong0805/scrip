@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onload ảnh</title>
+    <script>
+        var img = [];
+        let index = 0;
+        function onloadanh(){
+            for(var i = 0; i < 5; i++){
+                img[i] = new Image();
+                img[i].src = "./anh1/" + i + ".jpg"
+            }
+        }
+        function first(){
+            let anh = document.getElementById('anh')
+            let index = 0;
+            anh.src = img[index].src;
+        }
+        function pre(){
+            let anh = document.getElementById('anh')
+            if(index > 0){
+                index--;
+                anh.src = img[index].src;
+            }
+           
+        }
+        function next(){
+            let anh = document.getElementById('anh')
+            if(index < img.length){
+                index++;
+                anh.src = img[index].src;
+            }else{
+                index = 0;
+                anh.src = img[index].src;
+            }
+            
+        }
+        function last(){
+            let anh = document.getElementById('anh')
+            let index = img.length - 1;
+            anh.src = img[index].src;
+        }
+    </script>
+</head>
+<body onload="onloadanh()">
+    <h1>Ảnh nè</h1>
+    <img style="width: 400px; height: auto;" src="./anh1/0.jpg" id="anh">
+    <br/>
+    <button onclick="first()">First</button>
+    <button onclick="pre()">pre</button>
+    <button onclick="next()">next</button>
+    <button onclick="last()">last</button>
+</body>
+</html>

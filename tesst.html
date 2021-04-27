@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ôn bài next ảnh</title>
+    <style>
+        img{
+            width: 200px;
+            height: auto;
+        }
+    </style>
+    <script>
+        var img = [];
+        var index = 0;
+        var run;
+        function loadanh(){
+            for(var i = 0; i < 6; i++){
+                img[i] = new Image();
+                img[i].src = "./anh1/" + i + ".jpg"
+            }
+        }
+        function start(){
+            var number = 1;
+            run = setInterval(function show(){
+                var img = ["./anh1/0.jpg","./anh1/1.jpg","./anh1/2.jpg","./anh1/3.jpg","./anh1/4.jpg","./anh1/5.jpg"];
+                document.getElementById('hienthi').src = img[number];
+                number++;
+                if(number == 6){
+                    number = 0;
+                }
+            },1000)
+        }
+        function pre(){
+            let anh = document.getElementById('hienthi');
+            if(index > 0){
+                index--;
+                anh.src = img[index].src;
+            }
+        }
+        function next(){
+            let anh = document.getElementById('hientthi');
+            if(index < img.length){
+                index++;
+                anh.src = img[index].src;
+            }
+        }
+        function stop(){
+            clearInterval(run)
+        }
+    </script>
+</head>
+<body>
+    <img src="./anh1/0.jpg" alt="" id="hienthi"><br />
+    <button onclick="start()">start</button>
+    <button onclick="pre()">pre</button>
+    <button onclick="next()">next</button>
+    <button onclick="stop()">stop</button>
+
+</body>
+</html>

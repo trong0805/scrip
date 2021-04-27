@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+
+<div>
+    Tên ny:
+    <input id="a" type="radio" name="ny" value="tên">a
+    <input id="b" type="radio" name="ny" value="tên">b
+    <input id="c" type="radio" name="ny" value="tên">c
+    <input id="d" type="radio" name="ny" value="tên">d
+    <input id="e" type="radio" name="ny" value="tên">e
+
+    <div id="diva" style="display: none;"><p>anh yêu a</p></div>
+    <div id="divb" style="display: none;"><p>anh yêu b</p></div>
+    <div id="divc" style="display: none;"><p>anh yêu c</p></div>
+    <div id="divd" style="display: none;"><p>anh yêu d</p></div>
+    <div id="dive" style="display: none;"><p>anh yêu e</p></div>
+</div>
+
+
+
+<script>
+   
+        let a = document.getElementById('a');
+        let b = document.getElementById('b');
+        let c = document.getElementById('c');
+        let d = document.getElementById('d');
+        let e = document.getElementById('e');
+
+        // let diva = document.getElementById('diva');
+        // let divb = document.getElementById('divb');
+        // let divc = document.getElementById('divc');
+        // let divd = document.getElementById('divd');
+        // let dive = document.getElementById('dive');
+
+        a.onchange = function(){ //thêm a vào function 
+            if(this.checked){
+                diva.style.display = "block"; //hiển thị diva khi nhấn vào a
+                divb.style.display = "none";
+                divc.style.display = "none";
+                divd.style.display = "none";
+                dive.style.display = "none";
+            }
+        }
+        b.onchange = function(){
+            if(this.checked){
+                divb.style.display = "block";
+                diva.style.display = "none";
+                divc.style.display = "none";
+                divd.style.display = "none";
+                dive.style.display = "none";
+            }
+        }
+        c.onchange = function(){
+            if(this.checked){
+                divc.style.display = "block";
+                divb.style.display = "none";
+                diva.style.display = "none";
+                divd.style.display = "none";
+                dive.style.display = "none";
+            }
+        }
+        d.onchange = function(){
+            if(this.checked){
+                divd.style.display = "block";
+                divb.style.display = "none";
+                divc.style.display = "none";
+                diva.style.display = "none";
+                dive.style.display = "none";
+            }
+        }
+        e.onchange = function(){
+            if(this.checked){
+                dive.style.display = "block";
+                divb.style.display = "none";
+                divc.style.display = "none";
+                divd.style.display = "none";
+                diva.style.display = "none";
+            }
+        }
+
+    
+</script>
+</body>
+
+</html>
+<!-- 11. Tạo 5 radio hiển thị tên 5 người yêu cũ
+Khi click thì hiển thị nội dung: anh yêu + tên NYC -->

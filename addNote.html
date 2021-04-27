@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">hhom1</a></li>
+            <li><a href="#">home2</a></li>
+        </ul>
+    </div>
+    <div id="footer"></div>
+
+    <script>
+        let ulElement = document.getElementById('header').firstElementChild;
+        console.log(ulElement);
+
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = "http://google.com.vn/";
+        a.innerHTML = 'nhà';
+
+        li.appendChild(a);
+        ulElement.prepend(li);
+
+        letFirstElement = ulElement.firstElementChild
+        console.log('=========' + letFirstElement);
+        console.log('========' + ulElement.children[0]);
+        letFirstElement = ulElement.lastElementChild
+
+        ulElement.replaceChild(letFirstElement,ulElement.children[1]);
+        
+
+    </script>
+   </body>
+</html>

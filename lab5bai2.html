@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2</title>
+    <script>
+        function them(button) {
+            var row = button.parentElement.parentElement.cloneNode(true); //button.parentElement.parentElement thêm vào bảng dưới(bản chính) + cloneNode(true) cho phép thêm bản sao của các nút đã nhấn thêm 
+            var nutXoa = row.getElementsByTagName("button")[0]; //gọi đến tagname button đã đc thêm
+            nutXoa.innerText = "Xóa"; //thêm chữ xóa vào button
+            nutXoa.setAttribute('onclick', 'xoa(this)'); // lấy giá trị ở lệnh onclick thêm vào hàm xoa(this) vào (lúc đầu là thêm,)
+            document.getElementById("giohang").appendChild(row); // truy xuất tới id giohang  và gán giá trị
+            tinhtong()
+        }
+
+        function xoa(button) {
+            var row = button.parentElement.parentElement;
+            document.getElementById("giohang").removeChild(row);
+
+            tinhtong(); //tinh tong
+        }
+
+        function tinhtong() {
+            var gio = document.getElementById("giohang");
+            var tr = gio.getElementsByTagName("tr");
+            var tong = 0;
+            for (var i = 0; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName("td");
+                var tien = td[1].innerText.substr(1);
+                tong += 1 * tien;
+            }
+            document.getElementById("tong").innerText = tong;
+            if (tong == 0) {
+                document.getElementById("empty").style.display = "";
+                document.getElementById("not-empty").style.display = "none";
+            }
+            else {
+                document.getElementById("empty").style.display = "none";
+                document.getElementById("not-empty").style.display = "";
+                if (tong > 6000) {
+                    document.getElementById("tong").style.backgroundColor = "yellow";
+                }
+                else {
+                    document.getElementById("tong").style.backgroundColor = "white";
+                }
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h3>GIỎ HÀNG CỦA BẠN</h3>
+    <table border="1">
+        <tr>
+            <td>Iphone 12</td>
+            <td>$5000</td>
+            <td><button onclick="them(this)">thêm</button></td>
+        </tr>
+        <tr>
+            <td>Sam Sung</td>
+            <td>$6000</td>
+            <td><button onclick="them(this)">thêm</button></td>
+        </tr>
+        <tr>
+            <td>Ipad pro</td>
+            <td>$4000</td>
+            <td><button onclick="them(this)">thêm</button></td>
+        </tr>
+        <tr>
+            <td>Nokia 1200</td>
+            <td>$10000</td>
+            <td><button onclick="them(this)">thêm</button></td>
+        </tr>
+    </table>
+
+    <h3>GIỎ HÀNG CỦA BẠN</h3>
+    <h3 id="empty">Bạn chưa chọn mặt hàng nào</h3>
+    <div id="not-empty" style="display:none;">
+
+        <table border="1" id="giohang"></table>
+        <h3>Tổng tiền là : $<span id="tong">0</span></h3>
+</body>
+
+</html>

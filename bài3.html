@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var tuoi =  new Array(); //khai báo mảng.
+        var size = prompt('nhập vào số lượng thành viên trong gđ:'); //nhập vào số kích cỡ mảng.
+       
+        for (var i = 0; i < size; i++) { //vòng lặp for dùng để nhập sô phần tử trong mảng.
+            tuoi[i] = prompt('nhập vào tuổi người thứ :' + (i + 1));
+        }
+        tuoi.sort(function compare(a,b){
+            return a - b;
+        });
+        for (var i = 0; i < size; i++) { //in ra số phần từ trong mảng.
+            document.writeln(tuoi[i]);
+        }
+    
+    </script>
+</body>
+
+</html>
+<!-- 3. Nhập vào tuổi của gđ.
+sắp xếp -> hiển thị tuổi gđ từ bé -> lớn

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function nguoiYeu(){
+        var dsny = new Array();
+        this.bai1= function () {
+           var size = prompt('nhập vào cỡ:')
+            for (i = 0; i < size; i++) {
+                dsny[i] = prompt("Tên ny tháng  " + (i + 1));
+            }
+        };
+        this.bai2 = function () {
+            for (const xxx of dsny) {
+                alert(xxx);
+            }
+        };
+        this.bai3 = function () {
+            dsny.sort();
+            this.bai2();
+        };
+        this.bai4 = function () {
+            for (const xxx of dsny) {
+                if (xxx.includes("Minh") == true) {
+                    alert(xxx);
+                }else{
+                    alert('không có người này!');
+                    break;
+                }
+            }
+        };
+    }
+</script>
+
+<body>
+
+    <script>
+        var ny = new nguoiYeu();
+        while (true) {
+            alert(
+                "Menu \n1. nhập danh sách tên người yêu hàng tháng\n2. xuất dánh sách\n3. SX tên từ z -> a\n4. Tìm kiếm NY tên 'Minh'\n5. Siêu thoát"
+            );
+            var chon = parseInt(prompt('nhập lựa chọn:'))
+
+            switch (chon) {
+                case 1:
+                    ny.bai1();
+                    break;
+                case 2:
+                    ny.bai2();
+                    break;
+                case 3:
+                    ny.bai3();
+                    break;
+                case 4:
+                    ny.bai4();
+                    break;
+                case 5:
+                    break;
+                default:
+                    document.write('Mời nhập từ 1 --> 5:')
+            }
+        }
+
+    </script>
+</body>
+
+</html>
+<!-- 
+7. xây dựng menu có các chức năng:
+    1. Nhập danh sách tên NY hàng tháng
+    2. xuất dánh sách
+    3. SX tên từ z -> a
+    4. Tìm kiếm NY tên "Minh"
+    5. Siêu thoát -->

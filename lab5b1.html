@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 1</title>
+</head>
+<body>
+    <script>
+        function nhanok(){
+            var a= document.getElementById("iphone"); //truy xuất tới iphone
+            var b = document.getElementById("soluong"); //truy xuất tới soluonog
+            var c = document.getElementById("name");//truy xuất tới name
+            var d = document.getElementById("sum");//truy xuất tới sum
+            
+            var e = a.getAttribute("data-price")*b.value; //getAttribute("data-price") truy xuất tới data-price lấy thuộc tính của nó
+            c.innerHTML = "Iphone 9"; //in ra ten iphone
+            d.innerHTML = e; //in ra e 
+        }
+    </script>
+    <label id="iphone" data-price="2000">Iphone 9</label> 
+    <input type="number" id="soluong"/>
+    <button onclick="nhanok()">ok</button>
+    <hr />
+    <h3>name: <span id="name"></span></h3>
+    <h3>Money: <span id="sum"></span></h3>
+    
+
+</body>
+</html>

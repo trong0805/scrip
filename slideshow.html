@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var img = []; //tạo mảng tên img
+		function load(){
+			for (var i = 0; i < 6; i++) { //chạy vòng for
+	    		img[i] = new Image(); //gắn ảnh bằng new image
+	   			img[i].src = "./anh/" + i + ".jfif"; //truy xuất tới khu vực lưu trữ ảnh
+			}
+		}
+		let index = 0; //tạo biến đếm index gán  = 0
+		function pre(){ //tạo hàm pre(hiển thị ảnh trước)
+			let anh = document.getElementById("anh"); //gọi tới id là ảnh
+			if (index > 0) { //nếu index > 0 
+				index--; //index -1
+				anh.src = img[index].src; //truy xuất tới ảnh gán ảnh vị trí thứ index
+			}
+		}	
+		function next(){ //tạo hàm next (hiển thị ảnh tiếp)
+			let anh = document.getElementById("anh");
+			if (index < img.length) {
+				index++;
+				anh.src = img[index].src;
+			}else{
+				anh.src = img[0].src;
+			}
+			// if(index >= img.length) {
+			// 	index = 0;
+			// 	anh.src = img[index].src;
+    		// }
+		}	
+		function first(){ //ảnh đầu tiên
+			let anh = document.getElementById('anh');
+			let index = 0;
+			anh.src = img[index].src;
+		} 
+		function last(){ //ảnh cuối cùng
+			let anh = document.getElementById('anh');
+			let index = img.length - 1;
+			anh.src = img[index].src;
+		}
+	</script>
+</head>
+<body onload="load()">
+	<img src="./anh/0.jfif" id="anh">
+	<button onclick="first()">First</button>
+	<button onclick="pre()">Pre</button>
+	<button onclick="next()">Next</button>
+	<button onclick="last()">Last</button>
+</body>
+</html>

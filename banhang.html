@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: auto;
+        }
+        table{
+            border: 1px solid black;
+        }
+        table tr th{
+            border: 1px solid black;
+        }
+        table tr td{
+            border: 1px solid black;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <script>
+        //dùng onblur
+        // function disabledcheck(){
+
+        //         document.getElementById('check').disabled = false;
+            
+        // }
+    </script>
+</head>
+<body>
+    <h1>BÁN HÀNG</h1>
+    <select>
+        <option value="">mức giá</option>
+        <option value="">Trên 500</option>
+        <option value="">Trên 300</option>
+        <option value="">Trên 100</option>
+        <option value="">Trên 50 </option>
+
+    </select> <br /> <br />
+    <table>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>Hàng hóa</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onclick="disabledcheck()"></td>
+            <td>iphone 9</td>
+            <td>700</td>
+            <td><input type="number" value="0" min="0" step="1" disabled></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onclick="disabledcheck()"></td>
+            <td>Samsung</td>
+            <td>400</td>
+            <td><input type="number" value="0" min="0" step="1" disabled></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onclick="disabledcheck()"></td>
+            <td>Nokia</td>
+            <td>100</td>
+            <td><input type="number" value="0" min="0" step="1" disabled></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onclick="disabledcheck()"></td>
+            <td>Sony Xperia</td>
+            <td>450</td>
+            <td><input type="number" value="0" min="0" step="1" disabled></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onclick="disabledcheck()"></td>
+            <td>Motorola</td>
+            <td>180</td>
+            <td><input type="number" value="0" min="0" step="1" disabled></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onclick="disabledcheck()"></td>
+            <td>Oppo</td>
+            <td>600</td>
+            <td><input type="number" value="0" min="0" step="1" disabled></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" onclick="disabledcheck()"></td>
+            <td>bPhone</td>
+            <td>90</td>
+            <td><input type="number" value="0" min="0" step="1" disabled></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th colspan="4">Tổng</th>
+            <th></th>
+        </tr>
+    </table>
+</body>
+</html>

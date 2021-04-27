@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><label>usename</label> <br />
+                    <input id="a" type="text" name="use" placeholder="nhap use">
+                </th>
+                <th><label>password</label> <br />
+                    <input id="b" type="password" name="password" placeholder="nhap password">
+                </th>
+                <th> <br /><button name="submit" onclick="them(this)" style="width: 50px; height: 24px">submit</button></th>
+            </tr>
+        </thead>
+        <tbody id="hienthi">
+
+        </tbody>
+    </table>
+    <script>
+        function them(button) {
+            let thetr = document.createElement('tr');
+
+            let thetd1 = document.createElement('td');
+            thetd1.innerText = document.getElementById('a').value;
+            let thetd2 = document.createElement('td');
+            thetd2.innerText = document.getElementById('b').value;
+            
+            thetr.appendChild(thetd1);
+            thetr.appendChild(thetd2);
+
+            document.getElementById("hienthi").appendChild(thetr);
+            document.getElementById('a').value = '';
+            document.getElementById('b').value = '';
+        }
+        // let jsonObject = [
+        //     {
+        //         name: 'trong',
+        //         password: '123'
+        //     },
+        //     {
+        //         name: 'trong1',
+        //         password: '123'
+        //     },
+        //     {
+        //         name: 'trong2',
+        //         password: '123'
+        //     }
+        // ]
+        // for (let i = 0; i < jsonObject.length; i++) {
+        //     let tr = document.createElement('tr');
+
+        //     let td1 = document.createElement('td');
+        //     td1.innerHTML = jsonObject[i].name;
+        //     let td2 = document.createElement('td');
+        //     td2.innerHTML = jsonObject[i].password;
+
+        //     tr.appendChild(td1);
+        //     tr.appendChild(td2);
+
+        //     let tbody = document.getElementById('hienthi');
+        //     tbody.appendChild(tr);
+           
+        // }
+    </script>
+</body>
+
+</html>

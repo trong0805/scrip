@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm Tra</title>
+    <style>
+      .container {
+        width: 400px;
+        height: 230px;
+        border: 2px solid black;
+        margin: 0 auto;
+        position: relative;
+        background-color: aqua;
+      }
+      label {
+        padding: 20px;
+      }
+      input {
+        margin: 10px;
+      }
+      button {
+        position: absolute;
+        left: 160px;
+        bottom: 60px;
+        padding: 5px 20px;
+      }
+      #thongbao {
+        position: absolute;
+        left: 160px;
+        bottom: 25px;
+      }
+      table{
+        background-color: aqua;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; color: red">Đăng kí</h1>
+    <div class="container">
+      <label>Mã sinh viên: </label>
+      <input id="name" type="text" />
+      <br />
+      <label>Môn đăng kí: </label>
+      <input id="pass" type="text" />
+      <br />
+      <label>Email SV: </label>
+      <input id="email" type="text" />
+      <br />
+      <button type="submit" onclick="check()">Đăng kí</button>
+      <div id="thongbao"></div>
+    </div><br>
+    <h1 style="text-align: center;">Danh sách sinh  viên đã đăng kí thành công</h1>
+    <table id="danhsach" border="2px" style="margin: 0 auto; width: 700px;height: 30px;border-collapse: collapse;text-align: center;">
+      <tr> 
+        <td>Mã sinh viên</td>
+        <td>Môn đăng kí</td>
+        <td>Email</td>
+      </tr>
+  </table>
+    <script>
+      function check() {
+        var danhsach = document.getElementById('danhsach');
+        var hang = danhsach.firstElementChild.cloneNode(true);
+        var cot = hang.getElementsByTagName('td');
+        var email = document.getElementById("email").value;
+
+        if (
+          /^ph/.test(document.getElementById('name').value)==false
+          || document.getElementById('name').value.length != 7
+        ) {
+          document.getElementById("thongbao").innerHTML = "Lỗi mã sinh viên";
+        }
+        else if (/^web/.test(document.getElementById("pass").value)==false) {
+          document.getElementById("thongbao").innerHTML =
+            "Lỗi môn đăng kí";
+        }
+        else if (/@fpt.edu.vn$/.test(email) == false) {
+          document.getElementById("thongbao").innerHTML =
+            "Email phải có @fpt.edu.vn";
+        }
+        else {
+          document.getElementById("thongbao").innerHTML = "Đăng kí thành công";
+          danhsach.appendChild(hang);
+          cot[0].innerHTML=document.getElementById("name").value;
+          cot[1].innerHTML=document.getElementById("pass").value;
+          cot[2].innerHTML=document.getElementById("email").value;
+          document.getElementById("name").value = "";
+          document.getElementById("pass").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("name").focus();
+        }
+      }
+    </script>
+  </body>
+</html>

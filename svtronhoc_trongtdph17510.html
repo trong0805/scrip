@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sinh vien tron hoc</title>
+
+    <style>
+        table {
+            border: 1px solid black;
+
+        }
+
+        table tr td {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function them(button) {
+            var name = document.getElementById('name')
+            var studen = document.getElementById('studen')
+            var off = document.getElementById('off')
+
+            if (name.value.length < 8) {
+                alert('tên tối thiểu 8 kí tự')
+                return false
+            }
+            if (/^Fpoly/.test(document.getElementById('studen').value) == false) {
+                alert('môn học phải có kí tự Fpoly')
+                return false
+            }
+            if (off.value.length != 2 || /^0/.test(document.getElementById('off').value) == false) {
+                alert('số phải 2 kí tự và bắt đầu là 0')
+                return false
+            } else {
+                function add() {
+                    var tr = document.createElement('tr');
+                    var td = document.createElement('td');
+                    td.innerHTML = document.getElementById('name').value
+                    tr.appendChild(td);
+
+                    var td1 = document.createElement('td');
+                    td1.innerHTML = document.getElementById('studen').value
+                    tr.appendChild(td1);
+
+                    var td2 = document.createElement('td');
+                    td2.innerHTML = document.getElementById('off').value
+                    tr.appendChild(td2);
+
+                    document.getElementById('themvao').appendChild(tr)
+
+                }
+                add();
+                // document.getElementById('name').value = "";
+                // document.getElementById('studen').value = "";
+                // document.getElementById('off').value = "";
+
+            }
+        }
+
+        function check() {
+            let table = document.getElementsByTagName('td');
+            for (let i = 1; i < table.length; i++) {
+                if (i % 3 == 2) {
+                    let x = table[i].innerHTML;
+                    if (x >= 4) {
+                        let num = 0;
+                        num++;
+                        let color = table[i].parentElement;
+                        color.style.backgroundColor = 'yellow';
+                    }
+
+                };
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Sinh viên trốn học</h1>
+
+    <label for="">Họ tên:</label> <br />
+    <input id="name" type="text" placeholder="nhập họ tên sinh viên..."><br />
+    <label for="">Môn đang học:</label> <br />
+    <input id="studen" type="text" placeholder="nhập môn đang học..."><br />
+    <label for="">Số buổi vắng:</label> <br />
+    <input id="off" type="text"><br />
+    <button onclick="them(this)">thêm</button>
+
+    <table id="themvao" style="margin: 0; width: 300px;height: 30px;">
+        <tr>
+            <td>Tên</td>
+            <td>Môn</td>
+            <td>Đã nghỉ(Số buổi)</td>
+        </tr>
+    </table>
+    
+    <button onclick="check()">---check---</button>
+</body>
+
+</html>

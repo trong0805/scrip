@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-image: url(./anh1/5.jpg);
+            background-size: 100;
+            background-position: center;
+        }
+        
+        img {
+            width: 500px;
+            max-height: 700px;
+        }
+
+        button {
+            background: wheat;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 50;
+        }
+    </style>
+    <script>
+        var img = [];
+        function load() {
+            for (var i = 0; i < 5; i++) { //chạy vòng for
+                img[i] = new Image(); //gắn ảnh bằng new image
+                img[i].src = "./anh1/" + i + ".jpg"; //truy xuất tới thứ i khu vực lưu trữ ảnh
+            }
+        }
+        let index = 0;
+        function first() {
+            let anh = document.getElementById('anh');
+            let index = 0;
+            anh.src = img[index].src
+        }
+        function pre() {
+            let anh = document.getElementById('anh');
+            if (index > 0) {
+                index--;
+                anh.src = img[index].src;
+            }
+        }
+        function next() {
+            if (index < img.length) {
+                index++;
+                anh.src = img[index].src;
+            }
+        }
+        function last() {
+            let anh = document.getElementById('anh');
+            let index = img.length - 1;
+            anh.src = img[index].src
+        }
+        function ny1() {
+            let index = 0;
+            anh.src = img[index].src
+        }
+        function ny2() {
+            let index = 1;
+            anh.src = img[index].src
+        }
+        function ny3() {
+            let index = 2;
+            anh.src = img[index].src
+        }
+        function ny4() {
+            let index = 3;
+            anh.src = img[index].src
+        }
+        function ny5() {
+            let index = 4;
+            anh.src = img[index].src
+        }
+    </script>
+</head>
+
+<body onload="load()">
+    <img src="./anh1/0.jpg" id="anh">
+    <br />
+    <button onclick="ny1()">NY1</button>
+    <button onclick="ny2()">NY2</button>
+    <button onclick="ny3()">NY3</button>
+    <button onclick="ny4()">NY4</button>
+    <button onclick="ny5()">NY5</button>
+    <br />
+    <br />
+    <button onclick="first()">first</button>
+    <button onclick="pre()">Pre</button>
+    <button onclick="next()">Next</button>
+    <button onclick="last()">Last</button>
+</body>
+
+</html>
+<!-- 10. Tạo 5 button, khi click hiển thị ảnh 5 người yêu cũ
+Tạo 4 nút slideShow cho 5 ảnh -->

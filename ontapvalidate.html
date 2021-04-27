@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function them() {
+            var name = document.getElementById('name')
+            var masp = document.getElementById('masp')
+            var ncc = document.getElementById('ncc')
+            var sl = document.getElementById('sl')
+            var gia = document.getElementById('gia')
+            var status = document.getElementById('status')
+
+            if (name.value == "" || masp.value == "" || ncc.value == "" || sl.value == "" || gia.value == "" || status.value == "") {
+                document.getElementById('thongbao').innerHTML = "Không để trống thông tin!"
+                return false;
+            }
+            if (name.value.length < 5) {
+                document.getElementById('thongbao').innerHTML = "tên > 5 kí tự"
+                return false
+            }
+            if (!sl.value.match(/^[0-9]{1,9999}$/)) {
+                document.getElementById('thongbao').innerHTML = "số lượng là số dương"
+                return false
+            }
+            if (!gia.value.match(/^([0-9]{1,999999999})$/)) {
+                document.getElementById('thongbao').innerHTML = "giá tiền là số dương"
+                return false
+            }else{
+                function hienthitt() {
+                    var tr = document.createElement("tr");
+
+                    var th1 = document.createElement("th");
+                    th1.innerHTML = document.getElementById('name').value;
+                    tr.appendChild(th1);
+
+                    var th2 = document.createElement("th");
+                    th2.innerHTML = document.getElementById('masp').value;
+                    tr.appendChild(th2);
+
+                    var th3 = document.createElement("th");
+                    th3.innerHTML = document.getElementById('ncc').value;
+                    tr.appendChild(th3);
+
+                    var th4 = document.createElement("th");
+                    th4.innerHTML = document.getElementById('sl').value;
+                    tr.appendChild(th4);
+
+                    var th5 = document.createElement("th");
+                    th5.innerHTML = document.getElementById('gia').value;
+                    tr.appendChild(th5);
+
+                    var th6 = document.createElement("th");
+                    th6.innerHTML = document.getElementById('status').value;
+                    tr.appendChild(th6);
+
+                    var th7 = document.createElement("th");
+                    th7.innerHTML = sl.value * gia.value;
+                    tr.appendChild(th7);
+
+                    document.getElementById("inratt").appendChild(tr)
+                    
+                    document.getElementById("thongbao").innerHTML = "";
+                    
+                }
+                hienthitt();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Quản lý nhập kho</h1>
+    <table>
+        <input type="text" id="name" placeholder="tên sản phẩm">
+        <br /><br />
+        <input type="text" id="masp" placeholder="mã sản phẩm">
+        <br /><br />
+        <input type="text" id="ncc" placeholder="nhà cung cấp">
+        <br /><br />
+        <input type="text" id="sl" placeholder="số lượng">
+        <br /><br />
+        <input type="text" id="gia" placeholder="giá tiền">
+        <br /><br />
+        <input type="text" id="status" placeholder="trạng thái" value="còn hàng">
+        <br /><br />
+        <span id="thongbao" style="color: green;"></span>
+        <br /> <br />
+        <button onclick="them()" style="background-color: crimson;color: white; text-align: center;">Thêm mới</button>
+    </table><br />
+    <table border="1px" style="background-color: chocolate; color: blanchedalmond;" id="inratt">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Mã sản phẩm</th>
+            <th>Nhà cung cấp</th>
+            <th>Số lượng</th>
+            <th>giá tiền</th>
+            <th>Status</th>
+            <th>Tổng tiền</th>
+            
+        </tr>
+    </table>
+</body>
+</html>

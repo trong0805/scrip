@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SV tron hoc</title>
+    <style>
+
+body {
+        margin-left: 400px;
+      }
+h1{
+  font-size: 32px;
+}
+      table {
+        border: 1px solid black;
+      }
+
+      th {
+        border: 1px solid black;
+      }
+
+      td {
+        border: 1px solid black;
+      }
+    </style>
+</head>
+<body>
+    <h1>SV trốn học</h1>
+    <label>Họ tên: </label><br />
+    <input type="text" id="hoten" name="hoten" /><br />
+    <label>Môn đang học: </label><br />
+    <input type="text" id="monHoc" name="monhoc" /><br />
+    <label>Số buổi vắng: </label><br />
+    <input type="number" id="nghiHoc" name="vang" /><br />
+
+    <button onclick="validateform()">Thêm</button>
+    <table id="body-table">
+      <th id="name">Tên</th>
+      <th id="subject">Môn</th>
+      <th id="nghi">Đã nghỉ (số buổi)</th>
+    </table>
+
+    <button onclick="check()">---check---</button>
+
+   
+</body>
+<script> 
+
+function check() {
+      let table = document.getElementsByTagName('td');
+      for (let i = 1; i < table.length; i++) {
+        if (i % 3 == 2) {
+          let x = table[i].innerHTML;
+          if (x > 4) {
+            let num = 0;
+            num++;
+            let y = table[i].parentElement;
+            y.style.backgroundColor = 'yellow';
+          }
+
+        };
+
+      }
+    }
+ function validateform() {
+        let object = {};
+        var json = [{}];
+        let ten = String(document.getElementById("hoten").value);
+        let mon = document.getElementById("monHoc").value;
+        let soBuoi = document.getElementById("nghiHoc").value;
+
+        if (ten==""||ten.length<8) {
+          alert("Ko được để trống tên và tối thiểu 8 ký tự!!!");
+        } else if (mon.search("Fpoly") < 0) {
+          alert("Phải có chữ Fpoly trong tên môn học");
+        } else if (soBuoi==null) {
+          alert("không được bỏ trống số buổi và số buổi có 2 chữ số bắt đầu bằng 0");
+        } else {
+          object.ten = ten;
+          object.mon = mon;
+          object.soBuoi = soBuoi;
+          let item = document.createElement("tr");
+
+          let item1 = document.createElement("td");
+        item1.innerHTML = object.ten;
+          let item2 = document.createElement("td");
+        item2.innerHTML = object.mon;
+          let item3= document.createElement("td");
+          item3.innerHTML = object.soBuoi;
+
+          item.appendChild(item1);
+        item.appendChild(item2);
+          item.appendChild(item3);
+
+         let tdbody= document.getElementById('body-table')
+tdbody.appendChild(item);
+          json.push(object);
+        }
+    
+
+        
+        
+      }
+
+</script>
+</html>

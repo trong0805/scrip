@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tong(a,b) {
+            tong = (a + b);
+            return tong
+        }
+        function hieu(a,b) {
+            hieu = a - b;
+            return hieu
+        }
+        function tich(a,b) {
+            tich = a * b;
+            return tich
+        }
+        function thuong(a,b) {
+            thuong =  a / b;
+            return thuong
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var a = parseInt(prompt('nhập giá trị của a:'))
+        var b = parseInt(prompt('nhập giá trị của b:'))
+        
+        console.log('giá trị của a: '+a);
+        console.log('giá trị của b: '+b);
+        // document.write(tong);
+        // document.write(hieu);
+        // document.write(tich);
+        // document.write(thuong);
+        console.log(tong(a,b));
+        console.log(hieu(a,b));
+        console.log(tich(a,b));
+        console.log(thuong(a,b));
+    </script>
+</body>
+</html>
+<!-- 5. Khai báo 2 biến a, b và nhập giá trị cho nó từ bàn phím
+- với mỗi phép tính cộng, trừ, nhân, chia chúng ta sẽ tạo ra 1 hàm riêng và thực hiện phép tính, 
+sau đó log ra giá trị của a, b và kết quả của 4 phép tính

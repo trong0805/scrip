@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //bài 1
+            var x = prompt('nhập giá trị muốn nhập: ')
+
+            if (isNaN(x) == true) {
+                alert('giá trị này không phải là số!')
+            } else {
+                alert('giá trị này là số!')
+            }
+        var n = prompt('nhập chuỗi:')
+        alert('chuỗi vừa nhập là : ' + n)
+    // hết bài 1 
+//==========================================//
+        //bài 2
+            var n = prompt('mời nhập số của bạn: ')
+            if (isNaN(n) == true) {
+                alert('giá trị này không phải là số!')
+            } 
+                var a = Math.sqrt(n)
+                var b = Math.pow(n,2)
+                var c = Math.round(n)
+                alert('căn bậc 2 :' + a + '\nbình phương : ' + b + '\nlàm tròn :' + c)
+    //hết bài 2
+//=============================================//
+        //bài3
+           var fullname = prompt('nhập họ và tên: ') 
+           var poins = prompt('mời nhập điểm: ')
+           var inhoa = fullname.toLocaleUpperCase();
+           
+           if(poins < 5){
+               alert("Họ và Tên: " + inhoa + "\nRớt cmnr nhé")
+           }else{
+               alert("Họ và Tên: " + inhoa + "\nđậu cmnr nhé")
+           }
+        //hết bài 3
+//==============================================//
+        //bài 4
+           var x = 10 + Math.random(5*Math.random())
+           var n = prompt('mời bạn nhập số:')
+           if(n == x ){
+               alert('chúc mừng bạm đã trúng giải ( giải đặc biệt)')
+           }else if(n > x){
+               alert('bạn đã nhập số lớn hơn số dặc biệt!')
+           }else{
+               alert('bạn đã nhập số bé hơn số dặc biệt!')
+           }
+        //hết bài 4
+//===============================================//
+        //bài 5
+           var a = prompt('mời nhập a:')
+           var b = prompt('mời nhập b:')
+           var c = prompt('mời nhập c:')
+
+           var delta = Math.pow(b,2) - 4*a*c
+           if(delta < 0){
+               alert('phương trình vô nghiệm!')
+           }else if(delta > 0){
+            var x1 = (-b + Math.sqrt(delta))/(2*a)
+            var x2 = (-b - Math.sqrt(delta))/(2*a)
+               alert('phương trình có 2 nghiệm phân biệt!' + '\nnghiệm thứ nhất' + x1 + '\nnghiệm thứ hai: ' +x2)
+           }else{
+               var x0 = -b/(2*a)
+               alert('phương trình có nghiệm kép là : ' + x0)
+           }
+        //hết bài 5
+//===============================================//
+</script>
+</body>
+
+</html>

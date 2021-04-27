@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+
+<body>
+    <input type="button" onclick="{inra()}" value="vòng 3"/>
+    <input type="button" onclick="inr()" value="vòng 1 quy tròn"/>
+
+    <script>
+        var a = prompt('nhập số đo vòng 1:')
+        
+        var b = prompt('nhập số đo vòng 2:')
+        
+        var c =  prompt('nhập số đo vòng 3:')
+        
+        function inr(){
+            var e = Math.ceil(a);
+            document.write(e);
+        }
+         function  inra(){
+            if (a > b && a > c) {
+            var d = a
+            document.write(d);
+        } else if (b > c && b > a) {
+            var d = b;
+            document.write(d);
+        } else {
+            var d = c;
+            document.write(d);
+        }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            var use = document.getElementById('usename');
+            var pas1 = document.getElementById('pass1');
+            var pas2 = document.getElementById('pass2');
+
+            if(use.value.length < 6){
+                alert('Tài khoản không hợp lệ!')
+                return false;
+            }
+            if(pas1.value != pas2.value){
+                alert('mật khẩu không khớp nhau!')
+                return false
+            }
+            if(pas1.value = "" || pas1.value.length < 6){
+                alert('pass không hợp lệ (> 6 kí tự)')
+                return false
+            }else{
+                function inra(){
+                    var tr = document.createElement("tr");
+                    var th1 = document.createElement("td");
+                    th1.innerHTML = document.getElementById('usename').value;
+                    tr.appendChild(th1);
+                    var th2 = document.createElement("td");
+                    th2.innerHTML = document.getElementById('pass1').value;
+                    tr.appendChild(th2);
+                    var th3 = document.createElement("td");
+                    th3.innerHTML = document.getElementById('pass2').value;
+                    tr.appendChild(th3);
+                    
+                    document.getElementById('themvao').appendChild(tr);
+                }
+                inra();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Đăng ký tài khoản</h3>
+    <table>
+        <label for="">Tài Khoản:</label> <br />
+        <input type="text" id="usename"><br />
+        <label for="">Nhập mật khẩu:</label><br/>
+        <input type="password" id="pass1"><br />
+        <label for="">Xác nhận lại mật khẩu</label><br />
+        <input type="password" id="pass2"><br /><br/>
+        <button onclick="check()">Đăng ký</button>
+    </table>
+    <h3>Tài khoản đã đăng ký</h3>
+    <table  border="1px" id="themvao">
+        <tr>
+            <th>Tên tài khoản</th>
+            <th>Mật khẩu của bạn</th>
+            <th>Xác nhận Mật khẩu</th>
+        </tr>
+    </table>
+</body>
+</html>

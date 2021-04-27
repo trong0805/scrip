@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Máy tính cá nhân</title>
+    <script src="./lab3.js"></script>
+    <style>
+    body {
+        text-align: center;
+    }
+    button {
+        width: 60px;
+        height: 60px;
+    }
+    input {
+        width: 240px;
+        height: 30px;
+        margin: 5px;
+    } 
+    </style>
+</head>
+
+<body>
+    <h1>MÁY TÍNH</h1>
+    <br />
+    <input   type="text" id="txtkq" /> <br />
+    <button  value="7" onclick="toan_hang(7)">7</button>
+    <button  value="8" onclick="toan_hang(8)">8</button>
+    <button   value="9" onclick="toan_hang(9)">9</button>
+    <button  value="+" onclick="toan_tu('+')">+</button>
+    <br />
+    <button  value="4" onclick="toan_hang(4)">4</button>
+    <button  value="5" onclick="toan_hang(5)">5</button>
+    <button  value="6" onclick="toan_hang(6)">6</button>
+    <button  value="-" onclick="toan_tu('-')">-</button>
+    <br />
+    <button  value="1" onclick="toan_hang(1)">1</button>
+    <button  value="2" onclick="toan_hang(2)">2</button>
+    <button  value="3" onclick="toan_hang(3)">3</button>
+    <button value="*" onclick="toan_tu('*')">*</button>
+    <br />
+    <button  value="0" onclick="toan_hang(0)">0</button>
+    <button  value="c" onclick="lam_lai()">C</button>
+    <button  value="=" onclick="thuc_hien()">=</button>
+    <button   value="/" onclick="toan_tu('/')">:</button>
+    <br />
+    
+</body>
+
+</html>

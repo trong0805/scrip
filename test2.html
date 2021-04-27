@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //c1
+        var cat = new Object(); //khai báo khởi tạo object
+        cat.name = "mèo đen" //gán gtri cho thuộc tính
+        cat.run = function(){ //tạo phuong thươc run
+            console.log("mèo chạy");
+        }
+        function cat(name,home){
+            this.name;
+            this.home;
+        }
+        console.log(cat.name); //in ra thuộc tính
+        cat.run(); //gọi phuong thức run
+        console.log(cat); // in ra object
+
+        //c2
+        personA = {
+            name : "trọng" ,
+            age :   19,
+            address : "hà tĩnh", 
+            talk : function(){
+                return  this.name + " nhà ở " + this.address + " Năm nay " + this.age;
+            },
+        }
+        console.log(personA.name)
+        console.log(personA.talk())
+        console.log(personA)
+        //thêm thuộc tính cho object
+        cat.home = "đông lào"
+        personA.weight = 55.55 
+        personA.eat = function(){
+            console.log(this.name + "ăn cơm ở" + this.address);
+        }
+    </script>
+</body>
+</html>
